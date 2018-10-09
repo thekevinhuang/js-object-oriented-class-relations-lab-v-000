@@ -16,7 +16,7 @@ class Driver {
 
   passengers() {
     let tripList = this.trips()
-    let passengers = tripList.map(function(trip){return store.passengers.find(function(passId){return passId.id === trip.passengerId})})
+    let passengers = tripList.map(function(trip){return trip.passenger()})
     return passengers
   }
 }
@@ -34,7 +34,7 @@ class Passenger {
 
   drivers() {
     let tripList = this.trips()
-    let drivers = tripList.map(function(trip){return store.drivers.find(function(driverId){return driverId.id===trip.driverId})})
+    let drivers = tripList.map(function(trip){return trip.driver()})
     return drivers
   }
 }
