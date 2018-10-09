@@ -34,7 +34,7 @@ class Passenger {
 
   drivers() {
     let tripList = this.trips()
-    let drivers = tripList.map(function(trip){return store.drivers.find(function(driverId){return driverId.id===trip.driverId})})
+    let drivers = tripList.map(function(trip){return trip.driver()})
     return drivers
   }
 }
